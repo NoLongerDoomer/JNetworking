@@ -2,10 +2,22 @@ package com.jnet.utils;
 
 import java.net.URL;
 
+/**
+ * Utility class for networking project
+ * 
+ * @author Swarup Singh Rajpurohit
+ *
+ */
 public class JNetworkingUtils {
 
 	public static String getCurrentDirectory() {
 		return System.getProperty("user.dir");
+	}
+
+	public static String getFileNameFromUrl(URL url) {
+		String path = url.getPath();
+
+		return getFileNameFromUrl(path);
 	}
 
 	public static String getFileNameFromUrl(String url) {
@@ -17,9 +29,4 @@ public class JNetworkingUtils {
 			return "file";
 	}
 
-	public static String getFileNameFromUrl(URL url) {
-		String path = url.getPath();
-
-		return getFileNameFromUrl(path);
-	}
 }
