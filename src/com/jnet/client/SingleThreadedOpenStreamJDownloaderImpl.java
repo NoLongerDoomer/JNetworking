@@ -13,7 +13,7 @@ import com.jnet.utils.JNetworkingUtils;
  * @author Swarup Singh Rajpurohit
  *
  */
-public class SingleThreadedJDownloaderImpl implements JDownloaderService {
+public class SingleThreadedOpenStreamJDownloaderImpl implements JDownloaderService {
 
 	@Override
 	public void downloadFile(String url) {

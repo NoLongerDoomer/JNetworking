@@ -22,7 +22,7 @@ public class JDownloaderMain {
 		}
 
 		// temporarily uses single thread downloader implementation
-		JDownloaderService downloaderService = new SingleThreadedJDownloaderImpl();
+		JDownloaderService downloaderService = new SingleThreadedOpenStreamJDownloaderImpl();
 
 		if (args.length == 1) {
 			downloadUrl = args[0];
