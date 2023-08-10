@@ -1,4 +1,4 @@
-package com.jnet.server;
+package com.jnet.server.services.impls;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,6 +8,9 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.URLDecoder;
+
+import com.jnet.server.services.HostFileService;
+import com.jnet.server.services.JSocketExposeService;
 
 public class HostFileSingleThreadedImpl implements HostFileService {
 
