@@ -1,4 +1,4 @@
-package com.jnet.server;
+package com.jnet.server.services;
 
 public interface HostFileService {
 

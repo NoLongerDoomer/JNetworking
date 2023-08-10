@@ -1,9 +1,7 @@
 package com.jnet.server;
 
-import com.jnet.server.services.HostFileService;
-import com.jnet.server.services.impls.HostFileSingleThreadedImpl;
-
-public class JSocketExplorerMain {
+public class JSocketMultiThreadedMain {
+	
 	private final static String FILE_ARGUMENT = "--file";
 	private final static String PORT_ARGUEMENT = "--port";
 	private final static String INVALID_ARGUEMENT_STR = "Invalid Arguement";
@@ -11,12 +9,12 @@ public class JSocketExplorerMain {
 	public static void main(String[] args) {
 
 		try {
-			if (args.length < 4) 
+			if (args.length < 4)
 				throw new RuntimeException("Invalid number of arguments, Provide Directory and Port! \n --file followed by path \n --port followed by port");
 
 			String directory = null;
 			int port = 0;
-			
+
 			for (int i = 0; i < args.length; i++) {
 				if (FILE_ARGUMENT.equalsIgnoreCase(args[i])) {
 					directory = args[++i];
@@ -27,8 +25,8 @@ public class JSocketExplorerMain {
 				}
 			}
 
-			HostFileService fileService = new HostFileSingleThreadedImpl();
-			fileService.exposeFileToSocket(directory, port);
+			JServerSocketManager serverSocketManager = new JServerSocketManager(port, directory);
+			serverSocketManager.startServer();
 
 		} catch (Exception e) {
 			System.err.println(e.getMessage());

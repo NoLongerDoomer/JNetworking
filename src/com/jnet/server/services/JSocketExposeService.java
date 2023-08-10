@@ -1,4 +1,4 @@
-package com.jnet.server;
+package com.jnet.server.services;
 
 import java.io.OutputStream;
 import java.io.PrintWriter;
