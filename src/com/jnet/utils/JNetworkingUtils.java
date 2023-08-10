@@ -9,6 +9,8 @@ import java.net.URL;
  *
  */
 public class JNetworkingUtils {
+	
+	private JNetworkingUtils() {}
 
 	public static String getCurrentDirectory() {
 		return System.getProperty("user.dir");

@@ -9,7 +9,7 @@ import java.net.Socket;
 
 public class JSimpleSocketMain {
 
-	private final static int PORT = 55515;
+	private static final int PORT = 55515;
 
 	public static void main(String[] args) {
 		try {

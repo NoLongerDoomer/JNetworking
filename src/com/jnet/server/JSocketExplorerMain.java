@@ -4,9 +4,9 @@ import com.jnet.server.services.HostFileService;
 import com.jnet.server.services.impls.HostFileSingleThreadedImpl;
 
 public class JSocketExplorerMain {
-	private final static String FILE_ARGUMENT = "--file";
-	private final static String PORT_ARGUEMENT = "--port";
-	private final static String INVALID_ARGUEMENT_STR = "Invalid Arguement";
+	private static final String FILE_ARGUMENT = "--file";
+	private static final String PORT_ARGUEMENT = "--port";
+	private static final String INVALID_ARGUEMENT_STR = "Invalid Arguement";
 
 	public static void main(String[] args) {
 

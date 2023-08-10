@@ -10,6 +10,8 @@ import com.jnet.server.beans.HttpHeaders;
 
 public class FileSender {
 
+	private FileSender() {}
+	
 	public static void sendFile(Socket socket, String filePath) {
 		File file = new File(filePath);
 
