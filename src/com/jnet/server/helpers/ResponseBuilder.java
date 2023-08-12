@@ -6,6 +6,8 @@ import com.jnet.server.beans.FileDetails;
 import com.jnet.server.beans.HttpHeaders;
 
 public class ResponseBuilder {
+	
+	private ResponseBuilder() {}
 
 	public static String buildDirectoryResponse(final String basePath, List<FileDetails> fileDetails) {
 		StringBuilder builder = new StringBuilder();

@@ -4,6 +4,8 @@ import com.jnet.server.beans.HttpRequest;
 import com.jnet.server.enums.HttpMethod;
 
 public class RequestParser {
+	
+	private RequestParser() {}
 
 	public static HttpRequest parse(String request) {
 		String[] requestParts = request.split(" ");

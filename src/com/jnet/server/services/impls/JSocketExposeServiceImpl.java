@@ -46,7 +46,6 @@ public class JSocketExposeServiceImpl implements JSocketExposeService {
 		printWriter.println(CONTENT_TYPE_HTML);
 		printWriter.println();
 		builder.append("<html><body>");
-//		builder.append("a href = '/downloadall");
 		try (DirectoryStream<Path> directoryStream = Files.newDirectoryStream(path)) {
 			builder.append("<table><tr><th>name</th><th>size</th><th>download link</th></tr>");
 			directoryStream.forEach(directory -> {
