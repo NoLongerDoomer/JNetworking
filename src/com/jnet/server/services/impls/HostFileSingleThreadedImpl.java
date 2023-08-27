@@ -18,7 +18,7 @@ public class HostFileSingleThreadedImpl implements HostFileService {
 	public void exposeFileToSocket(final String directory, final int port) {
 		try (ServerSocket serverSocket = new ServerSocket(port)) {
 
-			serverForeverLoop: while (true) {
+			while (true) {
 				try (Socket socket = serverSocket.accept()) {
 					BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
@@ -31,13 +31,13 @@ public class HostFileSingleThreadedImpl implements HostFileService {
 						OutputStream outputStream = socket.getOutputStream();
 						PrintWriter printWriter = new PrintWriter(outputStream, true);
 						JSocketExposeService service = new JSocketExposeServiceImpl();
-						if ("/".equalsIgnoreCase(pathAndProtocol[1]))
-							service.writeDirectoryToBrowser(printWriter, directory,null,  outputStream);
-						else {
-							
-							service.writeDirectoryToBrowser(printWriter,
-									directory, URLDecoder.decode(pathAndProtocol[1].substring(1), "UTF-8"),
-									outputStream);
+						if ("/".equalsIgnoreCase(pathAndProtocol[1])) {
+							service.writeDirectoryToBrowser(printWriter, directory, null, outputStream);
+						} else if ("/exit".equalsIgnoreCase(pathAndProtocol[1])) {
+							break;
+						} else {
+							service.writeDirectoryToBrowser(printWriter, directory,
+									URLDecoder.decode(pathAndProtocol[1].substring(1), "UTF-8"), outputStream);
 						}
 					}
 
